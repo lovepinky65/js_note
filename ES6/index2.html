@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>const特性 - ES6</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>ES6 - const特性</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2></h2>
+            <div class="content">
+                <p>
+                    <b>const 是唯獨變數，不能去做修改，如果指定Array或Object可以修改</b>
+                    const a = 123;<br><br>
+                    <b>如果Object想要設定唯獨，加入Object.freeze()</b>
+                    Object.freeze(obj);<br>
+                </p>
+                <script>
+                const a = 123;
+                console.log(a);
+                const obj = {
+                    url: 'XXX.html'
+                }
+                // 設定唯獨
+                Object.freeze(obj);
+                console.log(obj.url);
+                </script>
+            </div>
+        </div>
+
+        
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX基本概念 - AJAX</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>AJAX - AJAX基本概念</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2></h2>
+            <div class="content">
+                <p>
+                    <b>AJAX基本寫法</b>
+                </p>
+                <p class="code">
+                    // 產生一個XMLHttpRequest
+                    <b>var xhr = new XMLHttpRequest();</b>
+                    // .open('格式','網址',同步或非同步)
+                    <b>xhr.open('<i>get</i>','<i>https://hexschool.github.io/ajaxHomework/data.json</i>',<i>true</i>);</b>
+                    // 傳送資料過去，沒傳送用null
+                    <b>xhr.send(null);</b>
+                    // 看一下目前狀態
+                    <b>console.log(xhr.readyState);</b>
+                </p>
+                <p>
+                    <b>readySate狀態說明</b>
+                    0 - 已經產生一個XMLHttpRequest()，但還沒有連結你要的資料<br>
+                    1 - 用了open()，但還沒把資料傳送過去<br>
+                    2 - 偵測有用send <br>
+                    3 - loading <br>
+                    4 - 撈到資料，數據已經完全接收到了<br>
+                    <br>
+                </p>
+                <script>
+                    // 產生一個XMLHttpRequest
+                    var xhr = new XMLHttpRequest();
+                    // .open('格式','網址',同步或非同步)
+                    xhr.open('get','https://hexschool.github.io/ajaxHomework/data.json',true);
+                    // 傳送資料過去，沒傳送用null
+                    xhr.send(null);
+                    // 看一下目前狀態
+                    console.log(xhr.readyState);
+
+
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

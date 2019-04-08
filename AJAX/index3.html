@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取得資料、http狀態碼 - AJAX</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>AJAX - 取得資料、http狀態碼</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2>同步的解決辦法</h2>
+            <div class="content">
+                <p>
+                    <b>responseText 取得資料</b>
+                    xhr.responseText<br>
+                </p>
+                <p>status http狀態碼</p>
+                200 - 確定。 用戶端要求成功 <br>
+                404 - 錯誤的要求<br><br>                
+                <a target="_blank" href="https://blog.miniasp.com/post/2009/01/16/Web-developer-should-know-about-HTTP-Status-Code">其他相關參考網址</a><br>
+
+                
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>範例</h2>
+            <div class="content">
+                <div>
+                    資料顯示名稱 : <span class="js_content"></span>
+                </div>
+                <script>
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('get','https://hexschool.github.io/ajaxHomework/data.json',true);
+                    xhr.send(null);
+                    xhr.onload = function(){
+                        if(xhr.status == 200){
+                            var ContentBox = JSON.parse(xhr.responseText);
+                            document.querySelector('.js_content').innerHTML = ContentBox[0].name
+                        }else{
+                            alert('資料錯誤');
+                        }
+                    };
+
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

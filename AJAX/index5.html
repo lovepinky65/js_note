@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表單輸入&AJAX POST寫法 - AJAX</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>AJAX - 表單輸入&AJAX POST寫法</h1>
+        <hr>
+        <div class="step">
+            <h2>表單輸入</h2>
+            <div class="content">
+                <p>
+                    <b>輸入資料送出後，會顯示在網址上</b>
+                </p>
+                <form action="index5.html">
+                    <input type="text" id="name" name="name">
+                    <input type="password" name="password">
+                    <input type="submit" value="送出">
+                </form>
+                <script>
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+                    // 送出格式寫法
+                    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                    xhr.send('email=abcdexx@gmail.com&password=12345678');
+
+                </script>
+            </div>
+        </div>
+        <div class="step">
+            <h2>AJAX POST寫法</h2>
+            <div class="content">
+                <p>
+                    <b>AJAX POST寫法</b>
+                </p>
+                <p class="code">
+                    <b>var xhr = new XMLHttpRequest();</b>
+                    <b>xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);</b>
+                    // 送出格式寫法
+                    <b>xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");</b>
+                    <b>xhr.send('email=abcdexx@gmail.com&password=12345678');</b>
+                </p>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

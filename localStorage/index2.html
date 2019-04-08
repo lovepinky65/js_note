@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON.stringify()、JSON.parse() - localStorage瀏覽器資料儲存</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>localStorage瀏覽器資料儲存 - JSON.stringify()、JSON.parse()</h1>
+        <hr>
+
+        <div class="step">
+            <h2>JSON.stringify()、JSON.parse()</h2>
+            <div class="content">
+                <p>
+                    <b>JSON.stringfiy() - 將Array轉string</b>
+                    JSON.stringfiy(<i>Array</i>);<br>
+                </p>
+                <p>
+                    <b>JSON.parse() - 將string轉Array</b>
+                    JSON.parse(<i>string</i>)<br>
+                </p>
+                <p>
+                    <b>程式碼有範例</b>                    
+                </p>
+                <p class="code">
+                    <b>var array = [</b>
+                    <b>{</b>
+                    <b>&emsp;name : 'pinky'</b>
+                    <b>}];</b>
+                    // 將陣列轉換成字串<br>
+                    <b>var chageArray = JSON.stringify(array);</b>
+                    // 再把字串加入localStorage<br>
+                    <b>localStorage.setItem('myArray',chageArray);</b>
+                    // 取出localStorage值<br>
+                    <b>var getArray = localStorage.getItem('myArray');</b>
+                    // 確認值的type<br>
+                    <b>console.log(typeof(getArray));</b>
+                    // 將字串轉換成陣列<br>
+                    <b>var chageString = JSON.parse(getArray);</b>
+                    <b>console.log(chageString);</b>
+                    <b>console.log(typeof(chageString));</b>
+                </p>
+                <script>
+
+                    var array = [
+                    {
+                        name : 'pinky'
+                    }];
+                    // 將陣列轉換成字串
+                    var chageArray = JSON.stringify(array);
+                    // 再把字串加入localStorage
+                    localStorage.setItem('myArray',chageArray);
+                    // 取出localStorage值
+                    var getArray = localStorage.getItem('myArray');
+                    // 確認值的type
+                    console.log(typeof(getArray));
+                    // 將字串轉換成陣列
+                    var chageString = JSON.parse(getArray);
+                    console.log(chageString);
+                    console.log(typeof(chageString));
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

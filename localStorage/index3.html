@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data-* 透過dataset讀取自訂資料 - localStorage瀏覽器資料儲存</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>localStorage瀏覽器資料儲存 - data-* 透過dataset讀取自訂資料</h1>
+        <hr>
+
+        <div class="step">
+            <h2>data-* 透過dataset讀取自訂資料</h2>
+            <div class="content">
+                <p>
+                    <b>點擊顯示詳細資訊</b>
+                    <ul class="js_list_info">
+                        <li data-num="3" data-dog="1">Erica</li>
+                        <li data-num="2" data-dog="5">Pinky</li>
+                    </ul>
+                    <br>
+                </p>
+                <script>
+                    var listInfo = document.querySelector('.js_list_info');
+                    function checkList(e){
+                        var listnum = e.target.dataset.num;
+                        var listdog = e.target.dataset.dog;
+                        var listtext = e.target.innerHTML;
+                        if(e.target.nodeName != 'LI'){
+                            return;
+                        };
+                        console.log(listtext+'的農場有'+listnum+'個。');
+                        console.log(listtext+'的嗷嗷有'+listdog+'隻。');
+                    };
+                    listInfo.addEventListener('click',checkList,false);
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>動態擷取瀏覽器高度(innerHeight) - 瀏覽器功能探索(BOM)</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>瀏覽器功能探索(BOM) - 動態擷取瀏覽器高度(innerHeight)</h1>
+        <hr>
+
+        <div class="step">
+            <h2>動態擷取瀏覽器高度(innerHeight)</h2>
+            <div class="content">
+                <div id="banner" style="background: #666;color: #fff;padding: 20px">
+                    document.getElementById('banner').style.height = window.innerHeight+'px';
+                </div>
+                <script>
+                    document.getElementById('banner').style.height = window.innerHeight/2+'px';
+                    window.onresize = function(){
+                        document.getElementById('banner').style.height = window.innerHeight+'px';                
+                    };
+                </script>
+            </div>
+        </div>        
+
+        <a class="back" href="../index.html">回列表</a>
+    </div>
+</body>
+</html>

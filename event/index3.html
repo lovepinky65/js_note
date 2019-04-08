@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stopPropagation(中止冒泡事件) - event</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body class="body">
+    <div class="wrap">
+        <h1>event - stopPropagation(中止冒泡事件)</h1>
+        <hr>
+
+        
+        <div class="step">
+            <!-- <h2></h2> -->
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    e.stopPropagation();<br>
+                </p>
+                <p>
+                    <b>範例</b>
+                    <a href="#" class="box">點擊</a>
+                </p>
+                <script>                                    
+                    var el = document.querySelector('.box');
+                    el.addEventListener('click',function(e){
+                        e.stopPropagation();
+                        console.log('box');
+                    },false);
+
+                    var elBody = document.querySelector('.body');
+                    elBody.addEventListener('click',function(){
+                        console.log('你沒有點到box');
+                    },false);
+                    // false (事件氣泡 - event Bubbling) - 從指定元素往外找
+                    // true (事件捕捉 - event capturing) - 從最外面找到指定元素
+
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

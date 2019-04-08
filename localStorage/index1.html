@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setItem、getitem基本操作 - localStorage瀏覽器資料儲存</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>localStorage瀏覽器資料儲存 - setItem、getitem基本操作</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2>setItem、getitem基本操作</h2>
+            <div class="content">
+                <p>
+                    <b>setItem - 存入localStorage</b>
+                    localStorage.setItem('<i>標題</i>','<i>內容</i>');
+                </p>
+                <p>
+                    <b>getItem - 取出localStorage</b>
+                    localStorage.getItem('<i>標題</i>');
+                </p>
+                <p>
+                    <b>建立字串、將字串加入localStorage</b>
+                    var str = 'pinky';<br>
+                    localStorage.setItem('myNmae',str);
+                </p>
+                <script>
+                // 建立字串、將字串加入localStorage
+                var str = 'pinky';
+                localStorage.setItem('myName',str);
+                </script>
+                <p>
+                    <b>請輸入你的姓名</b>
+                    <input type="text" class="js_textclass" placeholder="myName">
+                    <input type="button" class="js_btnclass" value="儲存">
+                    <input type="button" class="js_btncall" value="取得myName的值">
+                </p>
+                <script>
+                    var btn = document.querySelector('.js_btnclass');
+                    var btncall = document.querySelector('.js_btncall');
+                    function saveName(e){
+                        var btnstr = document.querySelector('.js_textclass').value;
+                        localStorage.setItem('myName',btnstr);
+                    };
+                    btn.addEventListener('click',saveName);
+                    btncall.addEventListener('click',function(){
+                        var callName = localStorage.getItem('myName');
+                        alert(callName);
+                    });
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

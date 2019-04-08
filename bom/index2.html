@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回上一頁練習 - 瀏覽器功能探索(BOM)</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>瀏覽器功能探索(BOM) - 回上一頁練習</h1>
+        <hr>
+
+        <div class="step">
+            <h2>回上一頁練習</h2>
+            <div class="content">
+                <p>
+                    <b>回上一頁寫法</b>
+                    window.history.back();
+                </p>
+                <p>
+                    <b>下一頁寫法</b>
+                    window.history.forward();
+                </p>
+                <input type="button" value="上一頁" id="back">
+                <input type="button" value="下一頁" id="next">
+                <script>
+                    document.getElementById('back').onclick = function(){
+                        // 上一頁
+                        window.history.back();
+                    };
+                    document.getElementById('next').onclick = function(){
+                        // 下一頁
+                        window.history.forward();
+                    };
+                </script>
+            </div>
+        </div>
+
+        <a class="back" href="../index.html">回列表</a>
+    </div>
+</body>
+</html>

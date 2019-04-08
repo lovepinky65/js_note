@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript 練習</title>
+    <link rel="stylesheet" href="main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>javascript 練習</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <th class="">DOM</th>
+                    <td>
+                        <ul>
+                            <li class=""><a target="" href="DOM/index1.html">innerHTML、createElement</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="">瀏覽器功能探索(BOM)</th>
+                    <td>
+                        <ul>
+                            <li class=""><a target="" href="bom/index1.html">window 瀏覽器功能探索</a></li>
+                            <li class=""><a target="" href="bom/index2.html">上一頁、下一頁 (history)</a></li>
+                            <li class=""><a target="" href="bom/index3.html">window常用功能按鈕 (列印print、location、指向網址open)</a></li>
+                            <li class=""><a target="" href="bom/index4.html">動態擷取瀏覽器高度 (innerHeight)</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="">localStorage瀏覽器資料儲存</th>
+                    <td>
+                        <ul>
+                            <li class=""><a target="" href="localStorage/index1.html">setItem、getitem基本操作</a></li>
+                            <li class=""><a target="" href="localStorage/index2.html">JSON.stringify()、JSON.parse()</a></li>
+                            <li class=""><a target="" href="localStorage/index3.html">data-* 透過dataset讀取自訂資料</a></li>
+                            <!-- <li class=""><a target="" href="localStorage/index4.html"></a></li> -->
+                        </ul>
+                    </td>
+                </tr>                
+                <tr>
+                    <th class="">event</th>
+                    <td>
+                        <ul>
+                            <li class=""><a target="" href="event/index1.html">event物件 告知你當下元素資訊</a></li>
+                            <li class=""><a target="" href="event/index2.html">addEventListener</a></li>
+                            <li class=""><a target="" href="event/index3.html">stopPropagation(中止冒泡事件)</a></li>
+                            <li class=""><a target="" href="event/index4.html">preventDefault(取消預設觸發行為)</a></li>
+                            <li class=""><a target="" href="event/index5.html">e.target、e.target.nodeName</a></li>
+                            <li class=""><a target="" href="event/index6.html">e.keyCode</a></li>
+                            <li class=""><a target="" href="event/index7.html">focus(焦點)、blur(離開焦點)、mousemove(滑鼠滑入)</a></li>
+                            <li class=""><a target="" href="event/index8.html">網頁座標，了解 screen、page、client箇中差異</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="">ES6</th>
+                    <td>
+                        <ul>
+                            <li class=""><a target="" href="ES6/index1.html">let、const觀念</a></li>
+                            <li class=""><a target="" href="ES6/index2.html">const特性</a></li>
+                            <li class=""><a target="" href="ES6/index3.html">輕鬆組字串相加</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="">AJAX</th>
+                    <td>
+                        <ul>
+                            <li class=""><a target="" href="AJAX/index1.html">AJAX基本概念</a></li>
+                            <li class=""><a target="" href="AJAX/index2.html">同步與非同步</a></li>
+                            <li class=""><a target="" href="AJAX/index3.html">responseText取得資料、http狀態碼</a></li>
+                            <li class=""><a target="" href="AJAX/index4.html">什麼是Cross-Origin Resource Sharing (CORS)</a></li>
+                            <li class=""><a target="" href="AJAX/index5.html">表單輸入&AJAX POST傳遞資訊寫法</a></li>
+                            <li class=""><a target="" href="AJAX/index6.html">AJAX JSON傳遞資訊寫法</a></li>
+                            <!-- <li class=""><a target="" href="AJAX/index1.html"></a></li>
+                            <li class=""><a target="" href="AJAX/index1.html"></a></li> -->
+                        </ul>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <th class=""></th>
+                    <td>
+                        <ul>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                            <li class=""><a target="" href="localStorage/index1.html"></a></li>
+                        </ul>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    
+
+
+        <br><br><br><br>
+
+        <hr>
+
+
+
+    </div>
+
+
+    <style type="text/css" media="screen">
+        *{
+            -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              box-sizing: border-box;
+        }
+        table{
+            max-width: 1200px;
+            width: 100%;
+            margin: 50px auto;
+        }
+        tr{
+            margin-bottom: 10px;
+        }
+        th{
+            width: 30%;
+            color: #fff;
+            background: #57A3B7;
+            padding: 10px 20px;
+            text-align: left;
+        }
+        th.new{
+            background: #76439D;
+        }
+        td{
+            width: 70%;
+            padding: 10px 20px;
+            border-right: 1px solid #57A3B7;
+            border-top: 1px solid #57A3B7;
+            border-bottom: 1px solid #57A3B7;
+        }
+        ul{
+            margin: 0;
+            padding-top: 5px;
+        }
+        li{
+            padding-bottom: 7px;
+        }
+        li.new a{
+            color: #DF2453;
+            font-weight: bold;
+        }
+        a{
+            color: #000;
+            font-size: 15px;
+        }
+        a:hover{
+            color: #76439D;
+            font-weight: bold;
+        }
+        span.new{
+            color: #DF2453;
+            font-weight: bold;
+        }
+    </style>
+
+
+</body>
+</html>

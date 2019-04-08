@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>同步與非同步 - AJAX</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>AJAX - 同步與非同步</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2>同步與非同步說明</h2>
+            <div class="content">
+                <p class="">
+                    <b>xhr.open('get','https://hexschool.github.io/ajaxHomework/data.json',<i>true</i>);</b>
+                    true - 同步載入下方程式碼<br>
+                    false - 不同步，需載完JOSN檔才會往下執行(不建議)<br>
+                </p>
+                <p>
+                    <b>下方測試範例(程式碼內)</b>
+                </p>
+                <script>
+                    var xhr1 = new XMLHttpRequest();
+                    xhr1.open('get','https://hexschool.github.io/ajaxHomework/data.json',false);
+                    xhr1.send(null);
+                    // console.log(xhr1.responseText);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>同步的解決辦法</h2>
+            <div class="content">
+                <p>
+                    <b>onload - 等待loading完再執行裡面內容</b>
+                    xhr2.onload = function(){...}<br>
+                </p>
+                <script>
+                    var xhr2 = new XMLHttpRequest();
+                    xhr2.open('get','https://hexschool.github.io/ajaxHomework/data.json',true);
+                    xhr2.send(null);
+                    xhr2.onload = function(){
+                        console.log(xhr2.responseText);
+                    };
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

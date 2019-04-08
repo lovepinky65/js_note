@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>什麼是Cross-Origin Resource Sharing (CORS) - AJAX</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>AJAX - 什麼是Cross-Origin Resource Sharing (CORS)</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2></h2>
+            <div class="content">
+                <p>
+                    <b>CORS是否可以跨網域撈取資料</b><br>
+                    <b>相關連結</b>
+                    <a href="http://www.test-cors.org/">測試是否有CORS</a><br>
+                    <a href="https://opendata.epa.gov.tw/">opendata資料網站</a>
+
+                </p>
+                <script>
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('get','http://opendata2.epa.gov.tw/UV/UV.json',true);
+                    xhr.send(null);
+                    console.log(xhr.readyState);
+
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

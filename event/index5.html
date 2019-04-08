@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e.target、e.target.nodeName - event</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body class="body">
+    <div class="wrap">
+        <h1>event - e.target、e.target.nodeName</h1>
+        <hr>
+
+        
+        <div class="step">
+            <!-- <h2></h2> -->
+            <div class="content">
+                <p>
+                    <b>顯示點擊到的元素</b>
+                    e.target<br><br>
+                    <b>顯示tag名稱</b>
+                    e.target.nodeName<br><br>
+                </p>
+                <p>
+                    <b>範例</b>
+                </p>
+                <div class="box" style="padding: 20px;border: 1px solid #777">
+                    <ul>
+                        <li>
+                            <a href="#">點擊</a>
+                        </li>
+                    </ul>
+                </div>
+                <script>                                    
+                    var btn = document.querySelector('.box');
+                    btn.addEventListener('click',function(e){
+                        // 顯示點擊到的元素
+                        console.log(e.target);
+                        // 顯示tag名稱
+                        console.log(e.target.nodeName);
+                    },false);
+
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

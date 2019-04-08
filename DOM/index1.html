@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML、createElement - DOM</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>DOM - innerHTML、createElement</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2>innerHTML</h2>
+            <div class="content">
+                <p>
+                    <b>innerHTML寫法</b>
+                    var block = document.querySelector('.js_inner_html');<br>
+                    block.innerHTML = '<i>內容</i>';<br>
+                </p>
+                <p>
+                    <b>範例</b>
+                </p>
+                <div class="js_inner_html"></div>
+                <script>
+                    var block = document.querySelector('.js_inner_html');
+                    block.innerHTML = '<ul><li>我是新增的</li></ul>';
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>createElement</h2>
+            <div class="content">
+                <p>
+                    <b>createElement寫法</b>                    
+                </p>
+                <p class="code">
+                    // 先新增一個DOM元素em
+                    <b>var ContentTag = document.createElement('em');</b>
+                    // 寫入內容
+                    <b>ContentTag.textContent = '我是新加的';</b>
+                    <b>ContentTag.setAttribute('style','color: #00f');</b>
+                    // 增加子節點
+                    <b>document.querySelector('.js_title').appendChild(ContentTag);</b>
+                </p>
+                <p>
+                    <b>範例</b>
+                </p>
+                <div class="js_title">
+                    <em>我在這</em>
+                </div>
+                <script>
+                // 先新增一個DOM元素em
+                var ContentTag = document.createElement('em');
+                // 寫入內容
+                ContentTag.textContent = '我是新加的';
+                ContentTag.setAttribute('style','color: #00f');
+                // 增加子節點
+                document.querySelector('.js_title').appendChild(ContentTag);
+
+                </script>
+            </div>
+        </div>
+
+        <!-- <div class="step">
+            <h2></h2>
+            <div class="content">
+                <p>
+                    <b></b>
+                    <br>
+                </p>
+                <script>
+                </script>
+            </div>
+        </div> -->
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

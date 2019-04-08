@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX JSON傳遞資訊寫法 - AJAX</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>AJAX - AJAX JSON傳遞資訊寫法</h1>
+        <hr>
+        <div class="step">
+            <h2>傳送寫法</h2>
+            <div class="content">
+                <p class="code">
+                    <b>var content = {</b>
+                    <b>&emsp;email: "aa123@gmai.com",</b>
+                    <b>&emsp;password: "sdf123"</b>
+                    <b>}</b>
+                    <b>var xhr = new XMLHttpRequest();</b>
+                    <b>xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);</b>
+                    // 格式為json
+                    <b>xhr.setRequestHeader('Content-type','application/json');</b>
+                    // 將Object轉成字串
+                    <b>var data = JSON.stringify(content);</b>
+                    <b>xhr.send(data);</b>
+                </p>
+                <script>
+                    // var content = {
+                    //     email: "aa123@gmai.com",
+                    //     password: "sdf123"
+                    // }
+                    // var xhr = new XMLHttpRequest();
+                    // xhr.open('post','https://hexschool-tutorial.herokuapp.com/api/signup',true);
+                    // // 格式為json
+                    // xhr.setRequestHeader('Content-type','application/json');
+                    // // 將Object轉成字串
+                    // var data = JSON.stringify(content);
+                    // xhr.send(data);
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

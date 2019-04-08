@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>監聽addEventListener - event</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>event - 監聽addEventListener</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2>監聽addEventListener clikc時顯示console.log</h2>
+            <div class="content">
+                <p>
+                    <b>addEventListener寫法</b>
+                    addEventListener('<i>選擇事件</i>','<i>代入匿名function</i>',<i>選擇true或false</i>);<br><br>
+                    <i>false(事件氣泡 event bubbling) - 從指定元素往外找</i><br>
+                    <i>true(事件捕捉 event capturing) - 從最外層往內找到指定元素</i><br><br>
+                </p>
+                <p>
+                    <b>範例</b>
+                    <input type="button" value="clikc時顯示console.log" class="js_click"><br><br>
+                </p>
+                <p class="code">
+                    <b>var btn = document.querySelector('.js_click');</b>                    
+                    <b>btn.addEventListener('click',function(e){</b>
+                    <b>&emsp;console.log('我用addEventListener點擊事件');</b>
+                    <b>},false);</b>
+                </p>
+                <script>
+                    var btn = document.querySelector('.js_click');
+                    // addEventListener('選擇事件','代入匿名function',false);
+                    btn.addEventListener('click',function(e){
+                        console.log('我用addEventListener點擊事件');
+                    },false);
+                </script>
+            </div>
+        </div>
+
+        
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event物件 告知你當下元素資訊 - event</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>event - event物件 告知你當下元素資訊</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2>onclick 時顯示event資訊</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    <input type="button" value="點擊跳資訊" class="js_click"><br>
+                </p>
+                <p class="code">
+                    <b>var btn = document.querySelector('.js_click');</b>
+                    // function(e)也可以改成function(event)
+                    <b>btn.onclick = function(e){</b>
+                    <b>&emsp;console.log(e);</b>
+                    <b>};</b>
+                </p>
+                <script>
+                    var btn = document.querySelector('.js_click');
+                    // function(e)也可以改成function(event)
+                    btn.onclick = function(e){
+                        console.log(e);
+                    };
+                </script>
+            </div>
+        </div>
+
+        <!-- <div class="step">
+            <h2></h2>
+            <div class="content">
+                <p>
+                    <b></b>
+                    <br>
+                </p>
+                <script>
+                </script>
+            </div>
+        </div> -->
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

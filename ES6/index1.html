@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let、const觀念 - ES6</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>ES6 - let、const觀念</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2></h2>
+            <div class="content">
+                <p>
+                    <b>let、const是用來宣告區塊裡的變數，不會汙染全域變數。let 只存在大括號{}內</b>
+                    var a = 0;<br>                    
+                    let a = 0;<br>
+                </p>
+                <script>
+                    var a = 0;
+                    function changeA(){
+                        let a = 0;
+                        a = 1;
+                        console.log(a);
+                    }
+                    changeA();
+                    console.log(a);
+                </script>
+            </div>
+        </div>
+        <div class="step">
+            <h2>let、const的特性</h2>
+            <div class="content">                
+                <p>
+                    <b>1. 不會變成全域變數(window)</b>
+                </p>
+                <p>
+                    <b>2. 不會向上提升(var 會往前)</b>
+                    console.log(a); <i>//會顯示a不存在</i><br>
+                    let a = 0;<br>
+                    console.log(a); <i>//會顯示0</i>
+                </p>
+                <p>
+                    <b>3. 同個區塊上不能重複命名(var 可以)</b>
+                    let a = 1;<br>
+                    let a = 2; <i>//會出現錯誤</i>
+                </p>
+                <script>
+                    var a = 0;
+                    function changeA(){
+                        let a = 0;
+                        a = 1;
+                        console.log(a);
+                    }
+                    changeA();
+                    console.log(a);
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

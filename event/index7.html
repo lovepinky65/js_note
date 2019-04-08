@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focus(焦點)、blur(離開焦點)、mousemove(滑鼠滑入) - event</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>event - focus(焦點)、blur(離開焦點)、mousemove(滑鼠滑入)</h1>
+        <hr>
+        
+        <div class="step">
+            <h2>focus</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    XXX.addEventListener('<i>focus</i>',function(e){ ... },false);<br>
+                </p>
+                <p>
+                    <b>範例</b>
+                    <input type="text" class="js_text_focus">
+                </p>
+                <script>
+                    var focus_box = document.querySelector('.js_text_focus');
+                    focus_box.addEventListener('focus',function(e){
+                        e.target.style.background = '#ff0';
+                    },false);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>blur</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    XXX.addEventListener('<i>blur</i>',function(e){ ... },false);<br>
+                </p>
+                <p>
+                    <b>範例</b>
+                    <input type="text" class="js_text_blur">
+                </p>
+                <script>
+                    var blur_box = document.querySelector('.js_text_blur');
+                    blur_box.addEventListener('blur',function(e){
+                        if(e.target.value == ''){
+                            e.target.style.background = '#ff0';
+                            e.target.placeholder = '此欄位不可為空白';
+                        }else{
+                            e.target.style.background = '#fff';
+                        }
+                    },false);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>mousemove</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    XXX.addEventListener('<i>mousemove</i>',function(e){ ... },false);<br>
+                </p>
+                <p>
+                    <b>範例</b>
+                </p>
+                <div class="js_text_mousemove" style="width:200px;height: 200px;background: #999"></div>
+                <script>
+                    var mousemoveBox = document.querySelector('.js_text_mousemove');
+                    mousemoveBox.addEventListener('mousemove',function(e){
+                        e.target.style.background = '#ff0';
+                    },false);
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

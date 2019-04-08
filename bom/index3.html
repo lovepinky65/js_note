@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window常用功能按鈕(列印、location、指向網址) - 瀏覽器功能探索(BOM)</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>瀏覽器功能探索(BOM) - window常用功能按鈕(列印、location、指向網址)</h1>
+        <hr>
+
+        <div class="step">
+            <h2>window常用功能按鈕(列印、location、指向網址)</h2>
+            <div class="content">
+                <p>
+                    <b>列印功能寫法</b>
+                    window.print();
+                </p>
+                <p>
+                    <b>瀏覽location資訊</b>
+                    console.log(location);
+                </p>
+                <p>
+                    <b>移動到google首頁</b>
+                    window.open('https://www.google.com.tw/');
+                </p>
+                <input type="button" id="print" value="列印">
+                <input type="button" id="location" value="瀏覽location資訊">
+                <input type="button" id="open" value="移動到google首頁">
+                <script>
+                    document.getElementById('print').onclick = function(){
+                        window.print();
+                    };
+                    document.getElementById('location').onclick = function(){
+                        console.log(location);
+                    };
+                    document.getElementById('open').onclick = function(){
+                        // 指向指定網址，預設是另開視窗
+                        window.open('https://www.google.com.tw/');
+                    };
+                </script>
+            </div>
+        </div>        
+
+        <a class="back" href="../index.html">回列表</a>
+    </div>
+</body>
+</html>

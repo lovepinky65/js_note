@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>preventDefault(取消預設觸發行為) - event</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body class="body">
+    <div class="wrap">
+        <h1>event - preventDefault(取消預設觸發行為)</h1>
+        <hr>
+
+        
+        <div class="step">
+            <!-- <h2></h2> -->
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    e.preventDefault();<br>
+                </p>
+                <p>
+                    <b>範例</b>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <a href="#" class="box">點擊</a>
+                </p>
+                <script>                                    
+                    var btn = document.querySelector('.box');
+                    btn.addEventListener('click',function(e){
+                        // e.preventDefault();
+                        console.log('取消預設觸發行為')
+                    },false);
+
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

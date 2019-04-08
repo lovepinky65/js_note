@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>網頁座標，了解 screen、page、client箇中差異 - event</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    <style>
+        .fixed_box{
+            position: fixed;
+            width: 100%;
+            padding: 20px;
+            background: #5759ad;
+            color: #fff;
+            left: 0;
+            top: 0;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="js_body" style="width: 100%;height: 2000px;background: #b7b8f9">
+    <div class="fixed_box">
+        <div>screenX : <span class="js_screenX"></span></div>
+        <div>screenY : <span class="js_screenY"></span></div>
+        <div>pageX : <span class="js_pageX"></span></div>
+        <div>pageY : <span class="js_pageY"></span></div>
+        <div>clientX : <span class="js_clientX"></span></div>
+        <div>clientY : <span class="js_clientY"></span></div>
+    </div>
+    <div class="wrap" style="padding-top: 200px;">
+        <h1>event - 網頁座標，了解 screen、page、client箇中差異</h1>
+        <hr>
+
+        
+        <div class="step">
+            <div class="content">
+                <p>
+                    <b>screen - 整個螢幕解析度的位置，不看瀏覽器位置</b>
+                    e.screenX<br>
+                    e.screenY
+                </p>
+                <p>
+                    <b>page - 頁面的位置</b>
+                    e.pageX<br>
+                    e.pageY
+                </p>
+                <p>
+                    <b>client - 瀏覽器的位置</b>
+                    e.clientX<br>
+                    e.clientY
+                </p>
+            </div>
+        </div>
+        
+        <script>
+             var body = document.body;
+             var screenX = document.querySelector('.js_screenX');
+             var screenY = document.querySelector('.js_screenY');
+             var pageX = document.querySelector('.js_pageX');
+             var pageY = document.querySelector('.js_pageY');
+             var clientX = document.querySelector('.js_clientX');
+             var clientY = document.querySelector('.js_clientY');
+             function getPosition(e){
+                screenX.innerHTML = e.screenX;
+                screenY.textContent = e.screenY;
+                pageX.textContent = e.pageX;
+                pageY.textContent = e.pageY;
+                clientX.innerHTML = e.clientX;
+                clientY.innerHTML = e.clientY;
+             };
+             body.addEventListener('mousemove',getPosition,false);
+        </script>
+        
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

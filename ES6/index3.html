@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>輕鬆組字串相加 - ES6</title>
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>ES6 - 輕鬆組字串相加</h1>
+        <hr>
+
+        
+        <div class="step">
+            <h2></h2>
+            <div class="content">
+                <p>
+                    <b>用``包起來，變數寫法為${變數名}</b>
+                    <br>
+                </p>
+                <p>
+                    <b>原本寫法</b>
+                </p>
+                <p class="code">
+                    <b>const name = 'Erica';</b>
+                    <b>const dog = 2;</b>
+                    <b>let contentbox = document.querySelector('.js_content');</b>
+                    <b>contentbox.innerHTML = '&lt;ul>&lt;li&gt;'+<i>name</i>+'有'+<i>dog</i>+'隻嗷嗷&lt;/li&gt;&lt;/ul&gt;';</b>
+                </p>                
+                <p>
+                    <b>新的寫法</b>
+                </p>
+                <p class="code">
+                    <b>const name2 = 'Pinky';</b>
+                    <b>const dog2 = 1;</b>
+                    <b>let contentbox2 = document.querySelector('.js_content2');</b>
+                    <b>contentbox2.innerHTML = <i>`</i></b>
+                    <b>&emsp;&lt;ul&gt;</b>
+                    <b>&emsp;&emsp;&lt;li&gt;<i>${name2}</i>有<i>${dog2}</i>隻嗷嗷&lt;/li&gt;</b>
+                    <b>&emsp;&lt;/ul&gt;</b>
+                    <b><i>`</i>;</b>
+                </p><br>
+                <p>
+                    <b>範例</b>
+                </p>
+                <div class="js_content"></div>
+                <div class="js_content2"></div>
+                <script>
+                    // 原本寫法
+                    const name = 'Erica';
+                    const dog = 2;
+                    let contentbox = document.querySelector('.js_content');
+                    contentbox.innerHTML = '<ul><li>'+name+'有'+dog+'隻嗷嗷</li></ul>';
+
+                    //新寫法
+                    const name2 = 'Pinky';
+                    const dog2 = 1;
+                    let contentbox2 = document.querySelector('.js_content2');
+                    contentbox2.innerHTML = `
+                        <ul>
+                            <li>${name2}有${dog2}隻嗷嗷</li>
+                        </ul>
+                    `;
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>
