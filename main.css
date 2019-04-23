@@ -57,7 +57,7 @@ p i{
   font-size: 14px;
   padding: 0 2px;
 }
-p.code{
+p.code,i.code{
   color: #aaa;
   margin-top: -15px;
   padding-left: 20px;
