@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解構賦值 - ES6</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.2, maximum-scale=2, user-scalable=no" />
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>ES6 - 解構賦值</h1>
+        <hr>
+
+        <div class="step">
+            <h2>陣列 - 解構賦值基本介紹</h2>
+            <div class="content">
+                <p>
+                    <b>一般陣列取值寫法</b><br>
+                </p>
+                <p class="code">
+                  <b>let family = ['媽媽','爸爸','姊姊'];</b>
+                  <b>let mom = family[0];</b>
+                  <b>let fa = family[1];</b>
+                  <b>let sir = family[2];</b>
+                  <b>console.log(mom , fa , sir);<i class="code">//媽媽 爸爸 姊姊</i></b>  
+                </p>
+                <p>
+                    <b>解構賦值的寫法</b><br>
+                </p>
+                <p class="code">
+                  <b>let family = ['媽媽','爸爸','姊姊'];</b>
+                  <b>let <i>[mom , fa , sir]</i> = family;</b>
+                  <b>console.log(mom , fa , sir);<i class="code">//媽媽 爸爸 姊姊</i></b>
+                </p>
+                <p>
+                  <b>數量不對等時，會依序給予賦值</b><br>
+                </p>
+                <p class="code">
+                  <b>let family = ['媽媽','爸爸','姊姊'];</b>
+                  <b>let <i>[mom , fa]</i> = family;</b>
+                  <b>console.log(mom , fa);<i class="code">//媽媽 爸爸</i></b>
+                </p>
+                <p>
+                  <b>如有空格，該值跳過賦值</b><br>
+                </p>
+                <p class="code">
+                  <b>let family = ['媽媽','爸爸','姊姊'];</b>
+                  <b>let <i>[mom ,  , sir]</i> = family;</b>
+                  <b>console.log(mom , sir);<i class="code">//媽媽 姊姊</i></b>
+                </p>
+                <script>
+                  let family = ['媽媽','爸爸','姊姊'];
+                  let [mom , fa , sir] = family;
+                  // console.log(mom,fa,sir);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>陣列 - 變數應用</h2>
+            <div class="content">
+                <p>
+                  <b>變數交換</b><br>
+                </p>
+                <p class="code">
+                  <b>let Pinky = '方廷';</b>
+                  <b>let Erica = '霜霜';</b>
+                  <b>[Erica,Pinky] = [Pinky,Erica];</b>
+                  <b>console.log(Pinky,Erica);<i class="code">// 霜霜 方廷</i></b>
+                </p>
+                <p>
+                  <b>拆解字元到變數上</b><br>
+                </p>
+                <p class="code">
+                  <b>let Team = '方廷和霜霜';</b>
+                  <b>let [a , b , c , d , e]= Team;</b>
+                  <b>console.log(a , b , c , d , e);<i class="code">// 方 廷 和 霜 霜</i></b>
+                </p>
+                <p>
+                  <b>預設值</b><br>
+                </p>
+                <p class="code">
+                  <b>let Fanny = '方芳';</b>
+                  <b>let [<i>Fanny2 = '預設F', Candy = '預設C'</i>] = [Fanny];</b>
+                  <b>console.log(Fanny2 , Candy); <i class="code">// 方芳 預設C</i></b>
+                </p>
+                <script>
+                  // 變數交換
+                  let Pinky = '方廷';
+                  let Erica = '霜霜';
+                  [Erica,Pinky] = [Pinky,Erica];
+                  // 拆解字元到變數上
+                  let Team = '方廷和霜霜';
+                  let [a , b , c , d , e]= Team;
+                  // 預設值
+                  let Fanny = '方芳';
+                  let [Fanny2 = '預設F', Candy = '預設C'] = [Fanny];
+                  // console.log(Fanny2 , Candy);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+          <h2>物件 - 解構賦值</h2>
+          <div class="content">
+            <p>
+              <b>物件解構賦值寫法</b><br>
+            </p>
+            <p class="code">
+              <b>let OjectTeam = {</b>
+              <b>&emsp;TeamOne : '喬巴',</b>
+              <b>&emsp;TeamTwo : '魯夫',</b>
+              <b>&emsp;TeamThree : '娜美'</b>
+              <b>};</b>
+              <b>let { <i>TeamOne , TeamTwo : NewTwo</i> } = OjectTeam;
+                <i class="code">// { 對應名稱 , 對應名稱 : 新名稱 }</i>
+              </b>              
+              <b>console.log(TeamOne , NewTwo);<i class="code">// 喬巴 魯夫</i></b>
+            </p>
+            <p>
+              <b>延伸問題</b><br>
+            </p>
+            <p class="code">
+              <b>let OjectConetent = {</b>
+              <b>&emsp;title : '雪寶',</b>
+              <b>&emsp;content: ['阿尼','貓貓']</b>
+              <b>}</b>
+              <b>let { title : NewTitle , content : [ , cat ] } = OjectConetent;</b>
+              <b>console.log(NewTitle , cat);<i class="code">// 雪寶 貓貓</i></b>
+            </p>
+            <p>
+              <b>預設值</b><br>
+            </p>
+            <p class="code">
+              <b>let { baby : NewBaby = '預設寶貝' } = {}</b>
+              <b>console.log( NewBaby );<i class="code">// 預設寶貝</i></b>
+            </p>
+            <script>
+              // 物件解構賦值寫法
+              let OjectTeam = {
+                TeamOne : '喬巴',
+                TeamTwo : '魯夫',
+                TeamThree : '娜美'
+              };
+              let { TeamOne , TeamTwo : NewTwo } = OjectTeam;
+              // console.log(TeamOne , NewTwo);
+
+              // 延伸問題
+              let OjectConetent = {
+                title : '雪寶',
+                content: ['阿尼','貓貓']
+              }
+              let { title : NewTitle , content : [ , cat ] } = OjectConetent;
+              // console.log(NewTitle , cat);
+
+              // 預設值
+              let { baby : NewBaby = '預設寶貝' } = {}
+              console.log( NewBaby );
+
+            </script>
+          </div>
+        </div>
+
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

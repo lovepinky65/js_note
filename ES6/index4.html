@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展開與其餘 - ES6</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.2, maximum-scale=2, user-scalable=no" />
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>ES6 - 展開與其餘</h1>
+        <hr>
+        
+        <div class="step">
+            <h2>合併陣列的方法</h2>
+            <div class="content">
+                <p>
+                    <b>原本寫法</b><br>
+                </p>
+                <p class="code">
+                    <b>let groupA=['小明' , '媽媽' , '爸爸'];</b>
+                    <b>let groupB=['大名' , '阿姨'];</b>
+                    <b>let groupAll = <i>groupA.concat(groupB)</i>;</b>
+                </p>                
+                <p>
+                    <b>新的寫法</b><br>
+                </p>
+                <p class="code">
+                    <b>let groupA=['小明' , '媽媽' , '爸爸'];</b>
+                    <b>let groupB=['大名' , '阿姨'];</b>
+                    <b>let groupAll = <i>[...groupA, ...groupB]</i>;</b>
+                </p>
+                <script>
+                    let groupA = ['小明', '媽媽', '爸爸'];
+                    let groupB = ['大名', '阿姨'];
+                    // let groupAll = groupA.concat(groupB);
+                    let groupAll = [...groupA, ...groupB];
+                                    // console.log(groupAll);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>淺複製</h2>
+            <div class="content">
+                <p>
+                    <b>原本寫法(傳參考)</b><br>
+                </p>
+                <p class="code">
+                    <b>let groupC = ['小明', '媽媽', '爸爸'];</b>
+                    <b>let groupD = <i>groupC</i>;</b>
+                    <b>groupD.push('小黑');</b>
+                </p>                
+                <p>
+                    <b>新的寫法(淺複製，沒傳參考)</b><br>
+                </p>
+                <p class="code">
+                    <b>let groupC = ['小明', '媽媽', '爸爸'];</b>
+                    //新陣列
+                    <b>let groupD = <i>[...groupC]</i>;</b>
+                    <b>groupD.push('小黑');</b>
+                </p>
+                <script>
+                    let groupC = ['小明', '媽媽', '爸爸'];
+                    let groupD = [...groupC];//新陣列
+                    groupD.push('小黑');
+                    // console.log(groupC);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>類陣列觀念、類陣列轉換為陣列辦法</h2>
+            <div class="content">
+                <p>
+                    <b>類陣列觀念</b>
+                    <ul>
+                        <li class="list">list1</li>
+                        <li class="list">list2</li>
+                        <li class="list">list3</li>
+                    </ul>
+                </p>
+                <p class="code">
+                    // doms 為類陣列
+                    <b>let doms = document.querySelectorAll('li');</b>
+                </p><br>
+                <p>
+                    <b>類陣列展開為陣列辦法</b><br>
+                </p>
+                <p class="code">
+                    <b>let doms = document.querySelectorAll('li');</b>
+                    <b>let domsArray = <i>[...doms]</i>;</b>
+                </p>
+                <script>
+                    let doms = document.querySelectorAll('li');
+                    let domsArray = [...doms];
+                    // console.log(domsArray);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>類陣列 - function 傳入值</h2>
+            <div class="content">
+                <p>
+                    <b>function 傳入值為類陣列(arguments)</b><br>
+                </p>
+                <p class="code">
+                    <b>function updateEasy() {</b>
+                    &emsp;//arg 為類陣列
+                    <b>&emsp;let arg = <i>arguments</i>;</b>
+                    <b>&emsp;console.log(arguments);</b>
+                    <b>}</b>
+                    <b>updateEasy(2,3,5,100,200,60);</b>
+                </p>
+                <p>
+                    <b>將 arguments 展開成陣列</b><br>
+                </p>
+                <p class="code">
+                    <b>function updateEasy() {</b>
+                    &emsp;//arg 為陣列
+                    <b>&emsp;let arg = <i>[...arguments]</i>;</b>
+                    <b>&emsp;console.log(arguments);</b>
+                    <b>}</b>
+                    <b>updateEasy(2,3,5,100,200,60);</b>
+                </p>
+                <script>
+                    function updateEasy() {
+                        let arg = [...arguments];
+                        // console.log(arguments);
+                    }
+                    updateEasy(2,3,5,100,200,60);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>其餘參數</h2>
+            <div class="content">
+                <p>
+                    <b>下方寫法，只能傳入固定的參數</b><br>
+                </p>
+                <p class="code">
+                    <b>function moreMoney(a,b,c){</b>
+                    <b>&emsp;...</b>
+                    <b>}</b>
+                    <b>moreMoney(100,200,300);</b>
+                </p>
+                <p>
+                    <b>在無法確定傳入參數的多寡時，可以用其餘參數的方式傳入</b>
+                    <b>會以陣列方式呈現</b><br>
+                </p>
+                <p class="code">
+                    <b>function moreMoney(<i>...money</i>){</b>
+                    <b>&emsp;console.log(money);<i class="code">//[100, 200, 300]</i></b>
+                    <b>}</b>
+                    <b>moreMoney(100,200,300);</b>
+                </p>
+                <p>
+                    <b></b>
+                    <b>當然在前面也可以傳入其他指定參數</b><br>
+                </p>
+                <p class="code">
+                    <b>function moreMoney(<i>name , ...money</i>){</b>
+                    <b>&emsp;console.log(money);<i class="code">// 小明&emsp;[100, 200, 300]</i></b>
+                    <b>}</b>
+                    <b>moreMoney('小明',100,200,300);</b>
+                </p>
+                <script>
+                    function moreMoneyTwo(name,...money) {
+                        console.log(name,money);
+                    }
+                    moreMoneyTwo('小明',100, 200, 300);
+                </script>
+            </div>
+        </div>
+
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

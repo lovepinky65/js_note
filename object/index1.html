@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陣列方法(forEach、map、filter、find、every、some、reduce) - 陣列、物件</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.2, maximum-scale=2, user-scalable=no" />
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>陣列、物件 - 陣列方法(forEach、map、filter、find、every、some、reduce)</h1>
+        <hr>
+        <script>
+            const people = [
+                {
+                    name: '小明',
+                    money: 500
+                },
+                {
+                    name: '漂亮阿姨',
+                    money: 3000
+                },
+                {
+                    name: '杰倫',
+                    money: 60000
+                }
+            ];
+        </script>
+        
+        <div class="step">
+            <h2>forEach</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    people.<i>forEach</i>(function (item, index) { ... };
+                    <br><br>
+                </p>
+                <p>
+                    <b>範例</b><br>
+                </p>
+                <p class="code">
+                    <b>people.<i>forEach</i>(function (item, index) {</b>
+                    <b>&emsp;console.log(index,item);<i class="code">// 每一筆資料</i></b>
+                    <b>});</b>
+                </p>
+                <script>
+                    people.forEach(function (item, index) {
+                        // console.log(index,item);
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>map</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    const MapPeople =people.<i>map</i>(function (item, index) { <br>
+                    &emsp;return item ; <br>
+                    };
+                    <br><br>
+                    <b>特性</b>
+                    <b>1. map 會回傳值，以陣列呈現，如果沒有return，則陣列內的值會是 undefined</b>
+                    <b>2. 不管結果是true 或 false，都會回傳一個值</b>
+                    <br>
+                </p>
+                <p>
+                    <b>範例</b><br>
+                </p>
+                <p class="code">
+                    <b>const MapPeople = people.<i>map</i>(function(item,index){</b>
+                    <b>&emsp;item.icash = item.money + 500;</b>
+                    <b>&emsp;console.log(item);<i class="code">// 每一筆資料</i></b>
+                    <b>&emsp;return item;</b>
+                    <b>});</b>
+                    <b>console.log(MapPeople);</b>
+                    //輸出 <br>
+                    [<br>
+                    &emsp;{<br>
+                    &emsp;&emsp;name: '小明',<br>
+                    &emsp;&emsp;money: 500,<br>
+                    &emsp;&emsp;icash: 1000<br>
+                    &emsp;},<br>
+                    &emsp;{<br>
+                    &emsp;&emsp;name: '漂亮阿姨',<br>
+                    &emsp;&emsp;money: 3000,<br>
+                    &emsp;&emsp;icash: 3500<br>
+                    &emsp;},<br>
+                    &emsp;{<br>
+                    &emsp;&emsp;name: '杰倫',<br>
+                    &emsp;&emsp;money: 60000,<br>
+                    &emsp;&emsp;icash: 60500<br>
+                    &emsp;}<br>
+                    ]<br>
+                </p>
+                <script>
+                    const MapPeople = people.map(function(item,index){
+                        // item.icash = item.money + 500;
+                        // console.log(item);
+                        return item;
+                    });
+                    // console.log(MapPeople);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>filter</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    const FilterPeople =people.<i>filter</i>(function (item, index) { <br>
+                    &emsp;&emsp;...<br>
+                    };
+                    <br><br>
+                    <b>特性</b>
+                    <b>1. filter會回傳結果為true的值，以陣列呈現。</b>
+                    <br>
+                </p>
+                <p>
+                    <b>範例</b><br>
+                </p>
+                <p class="code">
+                    <b>const FilterPeople = people.<i>filter</i>(function(item,index){</b>
+                    <b>&emsp;if(item.money < 5000){</b>
+                    <b>&emsp;&emsp;return true;</b>
+                    <b>&emsp;}</b>
+                    <b>});</b>
+                    <b>console.log(FilterPeople);</b>
+                    //輸出 <br>
+                    [<br>
+                    &emsp;{<br>
+                    &emsp;&emsp;name: '小明',<br>
+                    &emsp;&emsp;money: 500,<br>
+                    &emsp;},<br>
+                    &emsp;{<br>
+                    &emsp;&emsp;name: '漂亮阿姨',<br>
+                    &emsp;&emsp;money: 3000,<br>
+                    &emsp;}<br>
+                    ]<br>
+                </p>
+                <script>
+                    const FilterPeople = people.filter(function(item,index){
+                        if(item.money < 5000){
+                            return true;
+                        }
+                    });
+                    // console.log(FilterPeople);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>find</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    const findPeople =people.<i>find</i>(function (item, index) { <br>
+                    &emsp;&emsp;...<br>
+                    };
+                    <br><br>
+                    <b>特性</b>
+                    <b>1. find會回傳結果為true的值，只會回傳一次。</b>
+                    <br>
+                </p>
+                <p>
+                    <b>範例</b><br>
+                </p>
+                <p class="code">
+                    <b>const findPeople = people.<i>find</i>(function(item,index){</b>
+                    <b>&emsp;if(item.money < 5000){</b> <b>&emsp;&emsp;return true;</b>
+                    <b>&emsp;}</b>
+                    <b>});</b>
+                    <b>console.log(findPeople);</b>
+                    //輸出 <br>
+                    {<br>
+                    &emsp;name: '小明',<br>
+                    &emsp;money: 500,<br>
+                    }<br>
+                </p>
+                <script>
+                    const findPeople = people.find(function (item, index) {
+                        if (item.money < 5000) {
+                            return true;
+                        }
+                    });
+                    // console.log(findPeople);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>every</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    const everyPeople =people.<i>every</i>(function (item, index) { <br>
+                    &emsp;&emsp;...<br>
+                    };
+                    <br><br>
+                    <b>特性</b>
+                    <b>1. every必須所有結果都為true，結果才會是true。</b>
+                    <br>
+                </p>
+                <p>
+                    <b>範例</b><br>
+                </p>
+                <p class="code">
+                    <b>const everyPeople = people.<i>every</i>(function(item,index){</b>
+                    <b>&emsp;if(item.money < 5000){</b> <b>&emsp;&emsp;return true;</b>
+                    <b>&emsp;}</b>
+                    <b>});</b>
+                    <b>console.log(everyPeople);<i class="code">// false</i></b>
+                </p>
+                <script>
+                    const everyPeople = people.every(function (item, index) {
+                        return item.money < 5000;
+                    });
+                    // console.log(everyPeople);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>some</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    const somePeople =people.<i>some</i>(function (item, index) { <br>
+                    &emsp;&emsp;...<br>
+                    };
+                    <br><br>
+                    <b>特性</b>
+                    <b>1. some只要有一個為true，結果就會是true。</b>
+                    <br>
+                </p>
+                <p>
+                    <b>範例</b><br>
+                </p>
+                <p class="code">
+                    <b>const somePeople = people.<i>some</i>(function(item,index){</b>
+                    <b>&emsp;if(item.money < 5000){</b> <b>&emsp;&emsp;return true;</b>
+                    <b>&emsp;}</b>
+                    <b>});</b>
+                    <b>console.log(somePeople);<i class="code">// true</i></b>
+                </p>
+                <script>
+                    const somePeople = people.some(function (item, index) {
+                        return item.money < 5000;
+                    });
+                    // console.log(somePeople);
+                </script>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>reduce</h2>
+            <div class="content">
+                <p>
+                    <b>寫法</b>
+                    people.reduce(function(<i>前一個值</i>,<i>當前值</i>,<i>索引</i>){<br>
+                    &emsp;return prev + item.money;<br>
+                    }, <i>前一個值的初始值</i>);<br>
+                    <br>
+                </p>
+                <p>
+                    <b>範例 - 從初始值0開始加總</b>
+                    <br>
+                </p>
+                <p class="code">
+                    <b>const ReducePeople = people.<i>reduce</i>(function (prev, item, index) {</b>
+                    <b>&emsp;return prev + item.money;</b>
+                    <b>}, 0);</b>
+                    <b>console.log(ReducePeople);<i class="code">// 63500</i></b>
+                </p>
+                <p>
+                    <b>範例 - 比大小</b>
+                    <br>
+                </p>
+                <p class="code">
+                    <b>const ReducePeople = people.<i>reduce</i>(function (prev, item, index) {</b>
+                    <b>&emsp;return Math.max(prev,item.money);</b>
+                    <b>}, 0);</b>
+                    <b>console.log(ReducePeople);<i class="code">// 60000</i></b>
+                </p>
+                <script>
+                    // const ReducePeople = people.reduce(function (prev, item, index) {
+                    //     return prev + item.money;
+                    // }, 0);
+                    // console.log(ReducePeople);
+                    const ReducePeople = people.reduce(function(prev,item,index){
+                        return Math.max(prev,item.money);
+                    }, 0);
+                    console.log(ReducePeople);
+                </script>
+            </div>
+        </div>
+        <a class="back" href="../index.html">回列表</a>
+
+    </div>
+</body>
+</html>

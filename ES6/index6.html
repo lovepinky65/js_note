@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>縮寫 - ES6</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=0.2, maximum-scale=2, user-scalable=no" />
+    <link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+    <link rel="stylesheet" href="../bootstrap-grid.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <h1>ES6 - 縮寫</h1>
+        <hr>
+
+        <div class="step">
+          <h2>物件縮寫</h2>
+          <div class="content">
+            <p>
+              <b>原本寫法</b><br>
+            </p>
+            <p class="code">
+              <b>const TeamOne = '魯夫';</b>
+              <b>const TeamTwo = {</b>
+              <b>&emsp;title : '喬巴',</b>
+              <b>&emsp;content : '娜美'</b>
+              <b>};</b>
+              <b>const TeamAll = {</b>
+              <b>&emsp;<i>TeamOne : TeamOne</i>,</b>
+              <b>&emsp;<i>TeamTwo : TeamTwo</i></b>
+              <b>};</b>
+            </p>
+            <p>
+              <b>新的寫法</b><br>
+            </p>
+            <p class="code">
+              <b>const TeamOne = '魯夫';</b>
+              <b>const TeamTwo = {</b>
+              <b>&emsp;title : '喬巴',</b>
+              <b>&emsp;content : '娜美'</b>
+              <b>};</b>
+              <b>const TeamAll = {</b>
+              <b>&emsp;<i>TeamOne</i>,</b>
+              <b>&emsp;<i>TeamTwo</i></b>
+              <b>};</b>
+            </p>
+            <script>
+              const TeamOne = '魯夫';
+              const TeamTwo = {
+                title : '喬巴',
+                content : '娜美'
+              };
+              const TeamAll = {
+                TeamOne,
+                TeamTwo
+              };
+              // console.log(TeamAll);
+            </script>
+          </div>
+        </div>
+        
+        <div class="step">
+          <h2>物件函式</h2>
+          <div class="content">
+            <p>
+              <b>原本寫法</b><br>
+            </p>
+            <p class="code">
+              <b>const newTeam = {</b>
+              <b>&emsp;<i>showPost : function()</i>{</b>
+              <b>&emsp;&emsp;console.log('內容');</b>
+              <b>&emsp;}</b>
+              <b>}</b>
+            </p>
+            <p>
+              <b>新的寫法</b><br>
+            </p>
+            <p class="code">
+              <b>const newTeam = {</b>
+              <b>&emsp;<i>showPost()</i>{</b>
+              <b>&emsp;&emsp;console.log('內容');</b>
+              <b>&emsp;}</b>
+              <b>}</b>
+            </p>
+            <script>
+              // const newTeam = {
+              //   showPost(){
+              //     console.log('內容');
+              //   }
+              // }
+            </script>
+          </div>
+        </div>
+
+        <div class="step">
+          <h2>搭配解構使用</h2>
+          <div class="content">
+            <p>
+              <b>原本寫法(傳參考)</b><br>
+            </p>
+            <p class="code">
+              <b>const orderTeam = {</b>
+              <b>&emsp;showPost : {</b>
+              <b>&emsp;&emsp;name : '小名'</b>
+              <b>&emsp;},</b>
+              <b>&emsp;showTitle : '媽媽'</b>
+              <b>};</b>
+              <b><i>const newTeam = orderTeam;</i></b>
+              <b>newTeam.ming = '天天';</b>
+            </p>
+            <p>
+              <b>新的寫法(不傳參考)</b><br>
+            </p>
+            <p class="code">
+              <b>const orderTeam = {</b>
+              <b>&emsp;showPost : {</b>
+              <b>&emsp;&emsp;name : '小名'</b>
+              <b>&emsp;},</b>
+              <b>&emsp;showTitle : '媽媽'</b>
+              <b>};</b>
+              <b><i>const newTeam = {</i></b>
+              <b><i>&emsp;...orderTeam</i></b>
+              <b><i>};</i></b>
+              <b>newTeam.ming = '天天';</b>
+            </p>
+            <script>
+              const orderTeam = {
+                showPost : {
+                  name : '小名'
+                },
+                showTitle : '媽媽'
+              };
+              const newTeam = {
+                ...orderTeam
+              };
+              newTeam.ming = '天天';
+              // console.log(newTeam);
+            </script>
+          </div>
+        </div>
+
+        <a class="back" href="../index.html">回列表</a>
+
+
+    </div>
+</body>
+</html>

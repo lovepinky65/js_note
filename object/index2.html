@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>建構式 - 陣列、物件</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=0.2, maximum-scale=2, user-scalable=no" />
+	<link rel="stylesheet" href="../main.css"><!-- 預設值，不用加1 -->
+	<link rel="stylesheet" href="../bootstrap-grid.css">
+
+</head>
+
+<body>
+	<div class="wrap">
+		<h1>陣列、物件 - 建構式</h1>
+		<hr>
+
+
+		<div class="step">
+			<h2>建構式寫法</h2>
+			<div class="content">
+				<p class="code">
+					<i>// 建構式內容</i>
+					<b>function Player(name,hp){</b>
+					<b>&emsp;this.name = name;<i class="code">//屬性</i></b>
+					<b>&emsp;this.hp = hp;<i class="code">//屬性</i></b>
+					<b>&emsp;this.rest = function () {<i class="code">//方法</i></b>
+					<b>&emsp;&emsp;console.log(`${this.name}戰鬥中，被打了一下`);</b>
+					<b>&emsp;&emsp;this.hp--;</b>
+					<b>&emsp;};</b>
+					<b>&emsp;this.report = function(){<i class="code">//方法</i></b>
+					<b>&emsp;&emsp;console.log(`${this.name}的血量是${this.hp}`);</b>
+					<b>&emsp;};</b>
+					<b>}</b><br>
+
+					<i>// player 建立第一個物件</i>
+					<b>var player = new Player('pinky','100');</b>
+					<b>player.report();</b><br>
+
+					<i>// player2 建立第二個物件</i>
+					<b>var player2 = new Player('Erica', '90');</b>
+					<b>player2.report();</b>
+					<b>player2.rest();</b>
+					<b>player2.report();</b>
+					<br>
+				</p>
+				<script>
+					function Player(name,hp){
+						this.name = name; //屬性
+						this.hp = hp; //屬性
+						this.rest = function () { //方法
+							console.log(`${this.name}戰鬥中，被打了一下`);
+							this.hp--;
+						};
+						this.report = function(){ //方法
+							console.log(`${this.name}的血量是${this.hp}`);
+						};
+					}
+					var player = new Player('pinky','100');
+					player.report();
+					var player = new Player('Erica', '90');
+					player.report();
+					player.rest();
+					player.report();
+				</script>
+			</div>
+		</div>
+
+	
+		<a class="back" href="../index.html">回列表</a>
+
+
+	</div>
+</body>
+
+</html>
